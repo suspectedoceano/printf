@@ -1,5 +1,6 @@
 #include "orange_printf.h"
 #include <stdbool.h>
+#include <stdio.h>
 
 
 
@@ -18,7 +19,7 @@ void	set_padding_zeros(t_data *data)
 	if (data->format.precision_value >= 0) 
 	{
 		// 📦[1992] .prec = 6-> 💡 pad with 2 zeros 001992
-		if (data->format.precision_value > data->format.nbr_len)
+		if (data->format.precision_value >= data->format.nbr_len)
 		{
 			data->format.padding_zeros = data->format.precision_value - \
 									 	data->format.nbr_len; 

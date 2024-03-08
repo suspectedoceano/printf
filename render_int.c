@@ -1,4 +1,5 @@
 #include "orange_printf.h"
+#include <stdio.h>
 
 
 static void	put_0x(t_data *data)
@@ -53,6 +54,11 @@ static void	put_sign(t_data *data)
 */
 void	print_int(t_data *data, union_int_hack int_values)
 {
+	//TEST
+	printf(M"ZEROS=%d\nSPACES=%d"RST"\n", 
+			data->format.padding_zeros, 
+			data->format.padding_spaces);
+	
 	// 1° int->1992 write alpha of it into tmp_buf
 	//   📦 str representation of my int
 	itoa_buf(data, int_values);

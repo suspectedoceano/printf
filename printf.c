@@ -116,6 +116,7 @@ int piccolo_printf (const char *fmt, ...)
 			{
 				//🤔🔥 put piccolo yelling
 				print_piccolo("RTFM!");
+				free(data.buf);
 				return PARSE_ERROR;	
 			}
 			// render the data properly 

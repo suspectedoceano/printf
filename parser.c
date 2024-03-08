@@ -114,8 +114,7 @@ int	parse_format(t_data *data)
 			data->format.base = BASE_2;
 	}
 	
-	/*
-		// TODO
+	// TODO
 	printf(M"\nLEFT %d\nPLUS %D\nSPACE %d\nASH %d\n"
 			"ZERO_PAD %d\nWIDTH %d\nPRECISION %d\n"
 			"SPECIFIER %c"RST"\n",
@@ -129,7 +128,5 @@ int	parse_format(t_data *data)
 			data->format.specifier
 			);
 	// TODO
-	*/
-
 	return OK;
 }

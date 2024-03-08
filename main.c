@@ -1,7 +1,6 @@
 #include "orange_printf.h"
 #include <stdio.h>
 
-
 /*
  *
  * [-][width *]
@@ -139,7 +138,6 @@ void	test_int()
 			piccolo_printf("This is a int "Y"[%0.*d]"RST"\n", 1<<8, 42));
 	printf(G"\treal_CHARS=%d"RST"\n\n\n\n",
 			printf("This is a int "G"[%0.*d]"RST"\n", 1<<8, 42));
-
 	//GPT
 	puts(M"\t\tGPT TESTS"RST);
 	 // Test case 1: Crazy combination of width, precision, and flags
@@ -154,11 +152,20 @@ void	test_int()
     printf(Y"\tmine_CHARS=%d"RST"\n", piccolo_printf("Crazy: "Y"[%-+*.*d]"RST"\n", 6, 3, 123));
     printf(G"\treal_CHARS=%d"RST"\n\n\n\n", printf("Crazy: "G"[%-+*.*d]"RST"\n", 6, 3, 123));
 
+
+
+	
     // Test case 4: Testing zero-padding, width, and precision with variable width (1<<5)
     printf(Y"\tmine_CHARS=%d"RST"\n", piccolo_printf("Crazy: "Y"[%0*.*d]"RST"\n", 1<<5, 2, 42));
     printf(G"\treal_CHARS=%d"RST"\n\n\n\n", printf("Crazy: "G"[%0*.*d]"RST"\n", 1<<5, 2, 42));
 
-    // Test case 5: A combination of left alignment, width, precision, and the '+' flag
+    printf(Y"\tmine_CHARS=%d"RST"\n", piccolo_printf("Crazy: "Y"[%0*.*d]"RST"\n", 5, 2, 42));
+    printf(G"\treal_CHARS=%d"RST"\n\n\n\n", printf("Crazy: "G"[%0*.*d]"RST"\n", 5, 2, 42));
+    
+
+
+	
+	// Test case 5: A combination of left alignment, width, precision, and the '+' flag
     printf(Y"\tmine_CHARS=%d"RST"\n", piccolo_printf("Crazy: "Y"[%-+10.5d]"RST"\n", 987654));
     printf(G"\treal_CHARS=%d"RST"\n\n\n\n", printf("Crazy: "G"[%-+10.5d]"RST"\n", 987654));
 
@@ -201,7 +208,6 @@ void	test_int()
     // Test case 2: Minimum negative integer value
     printf(Y"\tmine_CHARS=%d"RST"\n", piccolo_printf("Min int: "Y"[%d]"RST"\n", INT_MIN));
     printf(G"\treal_CHARS=%d"RST"\n\n\n\n", printf("Min int: "G"[%d]"RST"\n", INT_MIN));
-
 }
 
 
@@ -377,8 +383,8 @@ void	test_u()
 
 int main()
 {
+	
 	piccolo_printf("%b\n", 42);
-	/*
 	print_piccolo("CHARS");
 	test_char();
 
@@ -387,15 +393,16 @@ int main()
 
 	print_piccolo("STRING");
 	test_str();
+	
 
 	print_piccolo("INT");
 	test_int();
 
+	
 	print_piccolo("U");
 	test_u();
 
 	print_piccolo("PTR");
 	test_ptr();
-	*/
-
+	
 }
